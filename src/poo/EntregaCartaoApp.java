@@ -8,12 +8,20 @@ public class EntregaCartaoApp {
 	public static void main(String[] args) {
 		
 		Endereco endereco = new Endereco();
+		endereco.cep = "88802-100";
 		// dados do endereço
 		
 		Cliente cliente = new Cliente();
 		//dados do cliente
 		
-		cliente.enderecos.add(endereco);
+
+		try {
+			cliente.adicionaEndereco(endereco);
+			System.out.println("Endereço adicionado com sucesso!");
+			
+		} catch (Exception e) {
+			System.err.println("Houve um erro ao adicionar endereço: " + e.getMessage());
+		}
 		
 	}
 
